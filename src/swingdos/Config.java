@@ -12,4 +12,5 @@ public class Config {
     public static final int WINDOW_W = 400;
     public static final int H_CAR = 50;
     public static final int W_CAR = 150;
+    public static final int CAR_STEP = 5;
 }
