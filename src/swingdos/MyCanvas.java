@@ -5,12 +5,11 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.event.*;
+import javax.swing.Timer;
 
 public class MyCanvas extends JPanel implements KeyListener, ActionListener{
     
-    //Point pCar = new Point(Config.WINDOW_W/2, Config.WINDOW_H/2);
     Point pCar = new Point(Config.WINDOW_W/2, Config.WINDOW_H/2);
-    
     public MyCanvas(){
         setPreferredSize(new Dimension(Config.WINDOW_W, Config.WINDOW_H));
     }
@@ -19,7 +18,6 @@ public class MyCanvas extends JPanel implements KeyListener, ActionListener{
     protected void paintComponent (Graphics g){
      super.paintComponent(g);
      PaintBrush paintBrush = new PaintBrush(g);
-     
      paintBrush.drawCar(pCar);
     }
 
@@ -51,7 +49,13 @@ public class MyCanvas extends JPanel implements KeyListener, ActionListener{
     
  @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+        int x = pCar.getX();
+        int y = pCar.getY();
+        x=x+1;
+        pCar.setX(x);
+        y=y+1;
+        pCar.setY(y);
+        repaint();
         
     }
     @Override

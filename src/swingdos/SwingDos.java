@@ -2,12 +2,9 @@
 package swingdos;
 import javax.swing.*;
 
-
 public class SwingDos {
-
-    
-    public static void main(String[] args) {
-       JFrame window = new JFrame();
+    public static void main(String[] args[]) {
+       JFrame window = new JFrame("Swing");
        MyCanvas canvas = new MyCanvas();
        
        
@@ -18,6 +15,7 @@ public class SwingDos {
        window.setResizable(false); 
        window.setLocationRelativeTo(null); 
        window.setVisible(true);
+       window.addKeyListener(canvas);
     }
     
 }
